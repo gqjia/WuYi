@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: WuYi
+Version: 0.0.1
+Summary: A small NLP tool package
+Home-page: https://github.com/Moriarty12138/WuYi
+Author: Jia Guoqing
+Author-email: jiaguoqing12138@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Moriarty12138/WuYi/issues
+Description: # 五艺（WuYi）
+        五艺是一个简易的中文自然语言处理工具  
+        主要包括的功能有：中文分词、词性标注、情感分析、命名实体识别、关系抽取、关键词抽取、文本摘要、新词发现、文本聚类。  
+        当前还在开发中。  
+        
+        ## 开发进度
+        中文分词【未开始】  
+        词性标注【未开始】  
+        情感分析【未开始】  
+        命名实体识别【未开始】  
+        关系抽取【未开始】  
+        关键词抽取【未开始】  
+        文本摘要【未开始】  
+        新词发现【未开始】  
+        文本聚类【8.17开始】  
+        数据评测指标【8.30开始】
+        
+        ## 文档结构
+        ```text
+        \examples  示例代码
+        \wuyi  
+            \clustering  聚类算法
+                kmeans.py  K-Means算法
+            \core  核心部分代码
+            \metric  指标部分代码
+                BLEU.py  bleu评测指标
+                ROUGE.py  rouge评测指标
+        ```
+        
+        ## 中文分词
+        按字分词
+        
+        
+        ## 文本聚类
+        默认文本聚类方法：k-Means
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

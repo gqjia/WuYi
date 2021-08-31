@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2021/8/16 20:42
+# @Time    : 2021/8/17 16:26
 # @Author  : jiaguoqing 
 # @Email   : jiaguoqing12138@gmail.com
-# @File    : kmeans.py
+# @File    : __init__.py
 
-import random
+name = "wuyi"
+
+# 文本聚类
 

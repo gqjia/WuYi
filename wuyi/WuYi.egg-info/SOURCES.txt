@@ -1,0 +1,6 @@
+README.md
+setup.py
+wuyi/WuYi.egg-info/PKG-INFO
+wuyi/WuYi.egg-info/SOURCES.txt
+wuyi/WuYi.egg-info/dependency_links.txt
+wuyi/WuYi.egg-info/top_level.txt
