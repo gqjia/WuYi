@@ -3,6 +3,43 @@
 主要包括的功能有：中文分词、词性标注、情感分析、命名实体识别、关系抽取、关键词抽取、文本摘要、新词发现、文本聚类。  
 当前还在开发中。  
 
+## 安装
+使用pip安装
+```shell
+pip install WuYi
+```
+
+## 中文分词
+```python
+from wuyi import BasicTokenizer
+
+
+tokenizer = BasicTokenizer()
+text = "测试中文分词效果。"
+tokens = tokenizer.tokenize(text=text)
+
+print(tokens)
+```
+
+## 评价指标
+```python
+from wuyi import ROUGE, BLEU
+
+
+rouge = ROUGE()
+bleu = BLEU()
+
+hyp = "简单测试一下五艺的效果。"
+ref = "测试是否能够正确输出。"
+
+rouge_score = rouge.get_scores(hyp, ref, avg=True)
+print(rouge_score)
+
+bleu_score = bleu.get_scores(hyp, ref)
+print(bleu_score)
+```
+
+
 ## 开发进度
 中文分词【未开始】  
 词性标注【未开始】  
@@ -15,21 +52,17 @@
 文本聚类【8.17开始】  
 数据评测指标【8.30开始】
 
+
 ## 文档结构
 ```text
 \examples  示例代码
 \wuyi  
-    \clustering  聚类算法
-        kmeans.py  K-Means算法
-    \core  核心部分代码
-    \metric  指标部分代码
-        BLEU.py  bleu评测指标
-        ROUGE.py  rouge评测指标
+    \clustering  聚类算法[未完成]
+        kmeans.py  K-Means算法[未完成]
+    \core  核心部分代码[未完成]
+    \tokenizers 分词部分代码[未完成]
+        BasicTokenizer.py 基础分词[完成]
+    \metric  指标部分代码[未完成]
+        BLEU.py  bleu评测指标[完成]
+        ROUGE.py  rouge评测指标[完成]
 ```
-
-## 中文分词
-按字分词
-
-
-## 文本聚类
-默认文本聚类方法：k-Means

@@ -5,6 +5,8 @@
 # @Email   : jiaguoqing12138@gmail.com
 # @File    : __init__.py
 
+from wuyi.tokenizers.BasicTokenizer import BasicTokenizer
+
 from wuyi.metric.ROUGE import ROUGE
 from wuyi.metric.BLEU import BLEU
 
