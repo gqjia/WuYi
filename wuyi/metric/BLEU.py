@@ -4,6 +4,7 @@
 # @Author  : jiaguoqing 
 # @Email   : jiaguoqing12138@gmail.com
 # @File    : BLEU.py
+
 import math
 import sys
 from collections import defaultdict

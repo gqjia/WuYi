@@ -4,6 +4,7 @@
 # @Author  : jiaguoqing 
 # @Email   : jiaguoqing12138@gmail.com
 # @File    : ROUGE.py
+
 """ 计算ROUGE分数 """
 
 from wuyi.metric import rouge_score
@@ -22,7 +23,11 @@ class ROUGE:
     def __init__(self, metrics=None, stats=None):
         # metrics
         if metrics is not None:
-            self.metrics = [m.lower() for m in metrics]
+            if isinstance(metrics, list):
+                self.metrics = [m.lower() for m in metrics]
+            else:
+                self.metrics = [metrics.lower()]
+
             for m in self.metrics:
                 if m not in ROUGE.DEFAULT_METRICS:
                     raise ValueError("Unknown metric '%s'" % m)

@@ -11,7 +11,7 @@ setuptools.setup(
     version="0.0.1",
     author="Jia Guoqing",
     author_email="jiaguoqing12138@gmail.com",
-    description="A small NLP tool package",
+    description="A small NLP tool package.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Moriarty12138/WuYi",

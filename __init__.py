@@ -5,7 +5,7 @@
 # @Email   : jiaguoqing12138@gmail.com
 # @File    : __init__.py
 
-name = "wuyi"
+from wuyi.metric.ROUGE import ROUGE
+from wuyi.metric.BLEU import BLEU
 
-# 文本聚类
-
+# name = "wuyi"
