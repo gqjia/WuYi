@@ -6,7 +6,7 @@
 # @File    : tf-idf.py
 
 
-class tfidf(object):
+class tfidf:
     """
     将文档转换为 TF-IDF 特征表示
     """
