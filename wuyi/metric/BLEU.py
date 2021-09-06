@@ -29,14 +29,14 @@ def get_ngram(sent, n_size, label=None):
 def get_match_size(hyp_ngram, ref_ngram):
     # ref
     ref_set = defaultdict(int)
-    # for r_n in ref_ngram:
-    #     tmp_ref_set = defaultdict(int)
-    #     for n in r_n:
-    #         tmp_ref_set[tuple(n)] += 1
-    #     for ngram, count in tmp_ref_set.items():
-    #         ref_set[tuple(ngram)] = max(ref_set[tuple(ngram)], count)
-    for ngram in ref_ngram:
-        ref_set[tuple(ngram)] += 1
+    for r_n in ref_ngram:
+        tmp_ref_set = defaultdict(int)
+        for n in r_n:
+            tmp_ref_set[tuple(n)] += 1
+        for ngram, count in tmp_ref_set.items():
+            ref_set[tuple(ngram)] = max(ref_set[tuple(ngram)], count)
+    # for ngram in ref_ngram:
+    #     ref_set[tuple(ngram)] += 1
 
     # hyp
     hyp_set = defaultdict(int)
@@ -86,14 +86,22 @@ class BLEU:
         bp_r = 0
         for hyp, ref in zip(hyps, refs):
             hyp = self.tokenizer.tokenize(hyp)
-            ref = self.tokenizer.tokenize(ref)
+            if isinstance(ref, list):
+                ref = [self.tokenizer.tokenize(r) for r in ref]
+            else:
+                ref = [self.tokenizer.tokenize(ref)]
+
             for n_size in range(self.n_size):
                 hyp_ngram = get_ngram(hyp, n_size)
-                ref_ngram = get_ngram(ref, n_size)
+                # ref_ngram = get_ngram(ref, n_size)
+                refs_ngram = []
+                for r in ref:
+                    refs_ngram.append(get_ngram(r, n_size))
+
                 if n_size not in match_ngram:
                     match_ngram[n_size] = 0
                     candi_ngram[n_size] = 0
-                match_size, hyp_size = get_match_size(hyp_ngram, ref_ngram)
+                match_size, hyp_size = get_match_size(hyp_ngram, refs_ngram)
                 match_ngram[n_size] += match_size
                 candi_ngram[n_size] += hyp_size
             bp_c += len(hyp)
