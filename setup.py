@@ -8,7 +8,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="WuYi",
-    version="0.0.6",
+    version="0.0.7",
     author="Jia Guoqing",
     author_email="jiaguoqing12138@gmail.com",
     description="A small NLP tool package.",

@@ -10,6 +10,7 @@ pip install WuYi
 ```
 
 ## 中文分词
+中文分字：
 ```python
 from wuyi import BasicTokenizer
 
